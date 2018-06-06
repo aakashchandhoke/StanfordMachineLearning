@@ -17,16 +17,14 @@ for iter = 1:num_iters
     %       of the cost function (computeCostMulti) and gradient here.
     %
 
-
-
-
-
-
-
-
-
-
-
+	H = X * theta;
+	T = zeros(n , 1);
+	for i = 1 : m,
+		T = T + (H(i) - y(i)) * X(i,:)';	
+	end
+	
+	theta = theta - (alpha * T) / m;
+	
     % ============================================================
 
     % Save the cost J in every iteration    
